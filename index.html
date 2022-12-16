@@ -175,13 +175,102 @@
           <div class="btnctnr">
             <button style="width: 100%;margin-top:3px;width: 50%;position: relative;left: 50%;transform: translateX(-50%);font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" button id=backward name="direction" value="backward" >v</button>
           </div>
+          <div class="btnctnr">
+            <button style="width: 50%;position: relative;left: 50%;transform: translateX(-50%);" button id=stop name="direction" value="stop">Stop</button>
+          </div>
        <p ip></p>
       </div>
     </main>
     
 </div>
 
-    <script>{ let ipAddress;const ipBtn = document.querySelector('.ipbtn'); ipBtn.addEventListener('click',()=>{ document.querySelector('.ipDiv').style.display="none"; ipAddress = document.querySelector('.ipInput').value; document.querySelector('[ip]').innerText = ipAddress;const left=document.querySelector('#left');left.addEventListener('click',()=>{let url =`http://${document.querySelector('[ip]').innerText}/?${left.name}=${left.value}`; console.log(url);fetch(url).then(()=>{console.log('fetched')})});const right=document.querySelector('#right');right.addEventListener('click',()=>{let url =`http://${document.querySelector('[ip]').innerText}/?${right.name}=${right.value}`; console.log(url);fetch(url).then(()=>{console.log('fetched')})});const backward=document.querySelector('#backward');backward.addEventListener('click',()=>{let url =`http://${document.querySelector('[ip]').innerText}/?${backward.name}=${backward.value}`; console.log(url);fetch(url).then(()=>{console.log('fetched')})});const forward=document.querySelector('#forward');forward.addEventListener('click',()=>{let url =`http://${document.querySelector('[ip]').innerText}/?${forward.name}=${forward.value}`; console.log(url);fetch(url).then(()=>{console.log('fetched')})});const grassCutter=document.querySelector('#grasscutter');grassCutter.addEventListener('click',()=>{let url =`http://${document.querySelector('[ip]').innerText}/?${grassCutter.name}=${grassCutter.value}`;if(grassCutter.value == "on"){grassCutter.value="off";grassCutter.innerText="Grass trimmer off"}else{grassCutter.value="on";grassCutter.innerText="Grass trimmer on"}; console.log(url);fetch(url).then(()=>{console.log('fetched')})});const plougher=document.querySelector('#plougher');plougher.addEventListener('click',()=>{let url =`http://${document.querySelector('[ip]').innerText}/?${plougher.name}=${plougher.value}`;if(plougher.value == "on"){plougher.value="off";plougher.innerText="plougher off"}else{plougher.value="on";plougher.innerText="plougher on"}; console.log(url);fetch(url).then(()=>{console.log('fetched')})});const seedsower=document.querySelector('#seedsower');seedsower.addEventListener('click',()=>{let url =`http://${document.querySelector('[ip]').innerText}/?${seedsower.name}=${seedsower.value}`;if(seedsower.value == "on"){seedsower.value="off";seedsower.innerText="seed sower off"}else{seedsower.value="on";seedsower.innerText="seed sower on"}; console.log(url);fetch(url).then(()=>{console.log('fetched')})});});}
+    <script>{ let ipAddress;
+      const ipBtn = document.querySelector(".ipbtn");
+      ipBtn.addEventListener("click", () => {
+        document.querySelector(".ipDiv").style.display = "none";
+        ipAddress = document.querySelector(".ipInput").value;
+        document.querySelector("[ip]").innerText = ipAddress;
+        const left = document.querySelector("#left");
+        let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+      width=1,height=1`;
+        left.addEventListener("click", () => {
+          let url = `http://${document.querySelector("[ip]").innerText}/?${
+            left.name
+          }=${left.value}`;
+          window.open(url, "test", params);
+        });
+        const right = document.querySelector("#right");
+        right.addEventListener("click", () => {
+          let url = `http://${document.querySelector("[ip]").innerText}/?${
+            right.name
+          }=${right.value}`;
+          window.open(url, "test", params);
+        });
+        const backward = document.querySelector("#backward");
+        backward.addEventListener("click", () => {
+          let url = `http://${document.querySelector("[ip]").innerText}/?${
+            backward.name
+          }=${backward.value}`;
+          window.open(url, "test", params);
+        });
+        const stop = document.querySelector("#stop");
+        stop.addEventListener("click", () => {
+          let url = `http://${document.querySelector("[ip]").innerText}/?${
+            stop.name
+          }=${stop.value}`;
+          window.open(url, "test", params);
+        });
+        const forward = document.querySelector("#forward");
+        forward.addEventListener("click", () => {
+          let url = `http://${document.querySelector("[ip]").innerText}/?${
+            forward.name
+          }=${forward.value}`;
+          window.open(url, "test", params);
+        });
+        const grassCutter = document.querySelector("#grasscutter");
+        grassCutter.addEventListener("click", () => {
+          let url = `http://${document.querySelector("[ip]").innerText}/?${
+            grassCutter.name
+          }=${grassCutter.value}`;
+          if (grassCutter.value == "on") {
+            grassCutter.value = "off";
+            grassCutter.innerText = "Grass trimmer off";
+          } else {
+            grassCutter.value = "on";
+            grassCutter.innerText = "Grass trimmer on";
+          }
+          window.open(url, "test", params);
+        });
+        const plougher = document.querySelector("#plougher");
+        plougher.addEventListener("click", () => {
+          let url = `http://${document.querySelector("[ip]").innerText}/?${
+            plougher.name
+          }=${plougher.value}`;
+          if (plougher.value == "on") {
+            plougher.value = "off";
+            plougher.innerText = "plougher off";
+          } else {
+            plougher.value = "on";
+            plougher.innerText = "plougher on";
+          }
+          window.open(url, "test", params);
+        });
+        const seedsower = document.querySelector("#seedsower");
+        seedsower.addEventListener("click", () => {
+          let url = `http://${document.querySelector("[ip]").innerText}/?${
+            seedsower.name
+          }=${seedsower.value}`;
+          if (seedsower.value == "on") {
+            seedsower.value = "off";
+            seedsower.innerText = "seed sower off";
+          } else {
+            seedsower.value = "on";
+            seedsower.innerText = "seed sower on";
+          }
+          window.open(url, "test", params);
+        });
+      });
+    }      
     </script>
     <script type="module">import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"; const firebaseConfig = { apiKey: "AIzaSyBkomFp8M4EZI-jjR06EKQSEoW2g2oJ934",authDomain: "spamar-71800.firebaseapp.com",projectId: "spamar-71800",storageBucket: "spamar-71800.appspot.com",messagingSenderId: "211264968903",appId: "1:211264968903:web:d81ba03baacd2f32e646e2",};const app = initializeApp(firebaseConfig); import { getDatabase, get, ref, set, child, update, remove, onValue,} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"; const db = getDatabase(); var soilmoisture = document.querySelector(".smvalue");function realtime() {  const dbRef = ref(db);   var x = onValue(dbRef, (snapshot) => {          var data = [];          snapshot.forEach((childsnapshot) => {            console.log(childsnapshot.val());            data.push(childsnapshot.val());          });            soilmoisture.innerText=parseInt(data[0]);       }); }      window.onload = realtime();</script>
 <body>
