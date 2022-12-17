@@ -178,6 +178,9 @@
           <div class="btnctnr">
             <button style="width: 50%;position: relative;left: 50%;transform: translateX(-50%);" button id=stop name="direction" value="stop">Stop</button>
           </div>
+          <div class="btnctnr">
+            <button style="width: 50%;position: relative;left: 50%;transform: translateX(-50%);" button id=motioncontrol name="motioncontrol" value="on">Automatic Motion control</button>
+          </div>
        <p ip></p>
       </div>
     </main>
@@ -227,6 +230,21 @@
           }=${forward.value}`;
           window.open(url, "test", params);
         });
+        const motioncontrol = document.querySelector("#motioncontrol");
+        motioncontrol.addEventListener("click", () => {
+          let url = `http://${document.querySelector("[ip]").innerText}/?${
+            motioncontrol.name
+          }=${motioncontrol.value}`;
+          if (motioncontrol.value == "on") {
+            motioncontrol.value = "off";
+            motioncontrol.innerText = "Off Automatic";
+          } else {
+            motioncontrol.value = "on";
+            motioncontrol.innerText = "Automatic Motion control";
+          }
+          window.open(url, "test", params);
+        });
+        
         const grassCutter = document.querySelector("#grasscutter");
         grassCutter.addEventListener("click", () => {
           let url = `http://${document.querySelector("[ip]").innerText}/?${
