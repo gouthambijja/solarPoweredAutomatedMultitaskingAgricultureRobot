@@ -62,6 +62,7 @@
       }
       div.container1{
         color: white;
+        border-right: 1px solid white;
       }
       div.container2{
         padding-top: 0px;
@@ -99,12 +100,16 @@
           background-color: white;
         color: rgb(255, 101, 139);
       border-radius: 40px;
+      margin-top: 5px;
 }
       
      @media (max-width:768px){
           div[class^="container"]{
         flex-basis: 100%;
           }
+          div.container1{
+        border-right: none;
+      }
       }
       .ipDiv{
         width:100vw;
@@ -138,7 +143,6 @@
       }
     </style></head>
 <body>
-  <div class="ipDiv"><input type="text" class="ipInput" placeholder="enter IP address "><button class="ipbtn">submit</button></div>
   <div class="main-container">
     <header>Solar powered automated multitasking agriculture robot</header>
     <main>
@@ -146,6 +150,8 @@
         <h2 style="font-family:monospace;text-align:center">Field Data</h2>
         <br>
         <div class="soilmoisture fetcheddata" >Soil Moisture:&nbsp;<span class="smvalue">32</span>%</div>
+        <div class="soilmoisture fetcheddata" >humidity percent:&nbsp;<span class="smvalue">46</span>%</div>
+        <div class="soilmoisture fetcheddata" >Flame detected:&nbsp;<span class="smvalue">true</span></div>
 
       </div>
       
